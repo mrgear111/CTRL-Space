@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <!-- Main gradient for the logo -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11998E" />
+      <stop offset="100%" stop-color="#38EF7D" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Metal texture -->
+    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CCCCCC" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CCCCCC" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo background -->
+  <rect width="200" height="100" fill="transparent" />
+  
+  <!-- Main logo shape - a space telescope -->
+  <g transform="translate(100, 45)">
+    <!-- Telescope main body -->
+    <rect x="-35" y="-10" width="70" height="20" rx="2" ry="2" fill="url(#metalGradient)" stroke="#444444" stroke-width="1" />
+    
+    <!-- Telescope details -->
+    <rect x="-30" y="-7" width="60" height="14" rx="1" ry="1" fill="#333333" stroke="#444444" stroke-width="0.5" />
+    
+    <!-- Telescope lens -->
+    <circle cx="-35" cy="0" r="15" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="1" />
+    <circle cx="-35" cy="0" r="10" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <circle cx="-35" cy="0" r="5" fill="#FFFFFF" opacity="0.3" />
+    
+    <!-- Telescope solar panels -->
+    <rect x="-15" y="-25" width="30" height="10" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="0.5" opacity="0.9" />
+    <rect x="-15" y="15" width="30" height="10" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="0.5" opacity="0.9" />
+    
+    <!-- Panel details -->
+    <line x1="-10" y1="-25" x2="-10" y2="-15" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="-5" y1="-25" x2="-5" y2="-15" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="0" y1="-25" x2="0" y2="-15" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="5" y1="-25" x2="5" y2="-15" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="10" y1="-25" x2="10" y2="-15" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    
+    <line x1="-10" y1="15" x2="-10" y2="25" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="-5" y1="15" x2="-5" y2="25" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="0" y1="15" x2="0" y2="25" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="5" y1="15" x2="5" y2="25" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="10" y1="15" x2="10" y2="25" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    
+    <!-- Telescope antenna -->
+    <line x1="35" y1="0" x2="45" y2="0" stroke="#FFFFFF" stroke-width="1" />
+    <circle cx="48" cy="0" r="3" fill="#FFFFFF" />
+    
+    <!-- Light beam from telescope -->
+    <path d="M-50,0 L-80,15 L-80,-15 Z" fill="url(#logoGradient)" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Company name -->
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">DEEPVIEW</text>
+</svg>

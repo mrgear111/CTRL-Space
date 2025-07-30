@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <!-- Main gradient for the logo -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF416C" />
+      <stop offset="100%" stop-color="#FF4B2B" />
+    </linearGradient>
+    
+    <!-- Glow filter for the logo -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Logo background -->
+  <rect width="200" height="100" fill="transparent" />
+  
+  <!-- Main logo shape - a rocket -->
+  <g transform="translate(100, 50) scale(0.8)">
+    <!-- Rocket body -->
+    <path d="M0,-40 L-15,10 L-10,20 L0,15 L10,20 L15,10 Z" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="2" />
+    
+    <!-- Rocket window -->
+    <circle cx="0" cy="-10" r="7" fill="#FFFFFF" opacity="0.8" />
+    
+    <!-- Rocket fins -->
+    <path d="M-15,10 L-30,25 L-10,20 Z" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="1" />
+    <path d="M15,10 L30,25 L10,20 Z" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="1" />
+    
+    <!-- Rocket flames -->
+    <path d="M-5,20 L0,35 L5,20" fill="none" stroke="#FFFFFF" stroke-width="2">
+      <animate attributeName="d" values="M-5,20 L0,35 L5,20; M-5,20 L0,40 L5,20; M-5,20 L0,35 L5,20" dur="0.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Company name -->
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ROCKETFUEL</text>
+</svg>

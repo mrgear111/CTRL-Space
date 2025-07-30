@@ -1,0 +1,119 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large stars layer with glow effects -->
+  <defs>
+    <!-- Radial gradient for star glow -->
+    <radialGradient id="starGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Purple glow -->
+    <radialGradient id="purpleGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="50%" stop-color="#6E00FF" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6E00FF" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Blue glow -->
+    <radialGradient id="blueGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="50%" stop-color="#00D9FF" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00D9FF" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Pink glow -->
+    <radialGradient id="pinkGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="50%" stop-color="#FF3E7F" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#FF3E7F" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Star filter -->
+    <filter id="starFilter" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="glow" />
+      <feBlend in="SourceGraphic" in2="glow" mode="screen" />
+    </filter>
+  </defs>
+  
+  <!-- Large stars with glow -->
+  <g>
+    <!-- White stars -->
+    <circle cx="100" cy="100" r="3" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="200" r="2.5" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="150" r="3.5" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="700" cy="250" r="3" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="900" cy="180" r="2.5" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Purple stars -->
+    <circle cx="150" cy="350" r="4" fill="url(#purpleGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="450" cy="400" r="3" fill="url(#purpleGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="750" cy="350" r="3.5" fill="url(#purpleGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Blue stars -->
+    <circle cx="250" cy="550" r="3.5" fill="url(#blueGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="600" r="4" fill="url(#blueGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="550" r="3" fill="url(#blueGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Pink stars -->
+    <circle cx="200" cy="750" r="3" fill="url(#pinkGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="800" r="3.5" fill="url(#pinkGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="800" cy="750" r="4" fill="url(#pinkGlow)" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Additional stars -->
+    <circle cx="350" cy="900" r="3" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="950" r="2.5" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="950" cy="900" r="3.5" fill="#FFFFFF" filter="url(#starFilter)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Shooting stars -->
+  <g>
+    <line x1="200" y1="100" x2="300" y2="200" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" begin="1s" repeatCount="indefinite" />
+    </line>
+    <line x1="700" y1="300" x2="800" y2="400" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;1;0" dur="7s" begin="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="400" y1="600" x2="500" y2="700" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;1;0" dur="6s" begin="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="900" y1="800" x2="800" y2="900" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;1;0" dur="8s" begin="4s" repeatCount="indefinite" />
+    </line>
+  </g>
+</svg>

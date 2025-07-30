@@ -1,0 +1,70 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Circle -->
+  <circle cx="60" cy="60" r="58" stroke="url(#gradient1)" stroke-width="2" fill="none" />
+  
+  <!-- Inner Circle -->
+  <circle cx="60" cy="60" r="45" stroke="url(#gradient2)" stroke-width="1.5" fill="none" />
+  
+  <!-- Orbit Path -->
+  <ellipse cx="60" cy="60" rx="52" ry="30" transform="rotate(-25 60 60)" stroke="url(#gradient3)" stroke-width="1" stroke-dasharray="4 4" fill="none" />
+  
+  <!-- Satellite -->
+  <circle cx="100" cy="40" r="5" fill="url(#gradient4)">
+    <animate attributeName="cx" values="100;20;100" dur="10s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="40;80;40" dur="10s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Planet -->
+  <circle cx="60" cy="60" r="20" fill="url(#gradient5)" />
+  
+  <!-- Ring around planet -->
+  <ellipse cx="60" cy="60" rx="30" ry="10" transform="rotate(-25 60 60)" stroke="url(#gradient6)" stroke-width="2" fill="none" />
+  
+  <!-- Small stars -->
+  <circle cx="30" cy="30" r="1" fill="#FFFFFF">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="90" cy="25" r="1" fill="#FFFFFF">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="85" cy="85" r="1" fill="#FFFFFF">
+    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="25" cy="75" r="1" fill="#FFFFFF">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E00FF" />
+      <stop offset="1" stop-color="#00D9FF" />
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00D9FF" />
+      <stop offset="1" stop-color="#6E00FF" />
+    </linearGradient>
+    
+    <linearGradient id="gradient3" x1="0" y1="60" x2="120" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF3E7F" />
+      <stop offset="1" stop-color="#00D9FF" />
+    </linearGradient>
+    
+    <radialGradient id="gradient4" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#00D9FF" />
+    </radialGradient>
+    
+    <radialGradient id="gradient5" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6E00FF" />
+      <stop offset="0.7" stop-color="#3A0088" />
+      <stop offset="1" stop-color="#1A003D" />
+    </radialGradient>
+    
+    <linearGradient id="gradient6" x1="30" y1="60" x2="90" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF3E7F" />
+      <stop offset="1" stop-color="#00D9FF" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,115 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Spacecraft Body -->
+  <g filter="url(#glow)">
+    <path d="M200 50 L250 150 L200 300 L150 150 Z" fill="url(#spacecraftGradient)" />
+    
+    <!-- Wings -->
+    <path d="M250 150 L320 180 L280 220 L250 200 Z" fill="url(#wingGradient)" />
+    <path d="M150 150 L80 180 L120 220 L150 200 Z" fill="url(#wingGradient)" />
+    
+    <!-- Thrusters -->
+    <rect x="185" y="300" width="30" height="20" rx="5" fill="#1A003D" />
+    
+    <!-- Thruster Flames -->
+    <g class="flames">
+      <path d="M190 320 L200 350 L210 320 Z" fill="url(#flameGradient)">
+        <animate attributeName="d" values="M190 320 L200 350 L210 320 Z; M190 320 L200 360 L210 320 Z; M190 320 L200 350 L210 320 Z" dur="0.5s" repeatCount="indefinite" />
+      </path>
+    </g>
+    
+    <!-- Windows -->
+    <circle cx="200" cy="120" r="15" fill="url(#windowGradient)" />
+    <circle cx="200" cy="160" r="8" fill="url(#windowGradient)" />
+    <circle cx="200" cy="190" r="8" fill="url(#windowGradient)" />
+    
+    <!-- Tech Details -->
+    <rect x="190" y="220" width="20" height="5" rx="2" fill="#00D9FF" opacity="0.8" />
+    <rect x="190" y="230" width="20" height="5" rx="2" fill="#00D9FF" opacity="0.8" />
+    <rect x="190" y="240" width="20" height="5" rx="2" fill="#00D9FF" opacity="0.8" />
+    
+    <!-- Antenna -->
+    <line x1="200" y1="50" x2="200" y2="30" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="200" cy="25" r="5" fill="#FF3E7F" />
+  </g>
+  
+  <!-- Orbiting Satellite -->
+  <g class="satellite">
+    <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-dasharray="5 5" />
+    <circle cx="280" cy="150" r="8" fill="url(#satelliteGradient)">
+      <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Space Dust Particles -->
+  <g class="space-dust">
+    <circle cx="150" cy="100" r="1" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="250" cy="120" r="1" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="100" cy="200" r="1" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="250" r="1" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="180" cy="300" r="1" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="220" cy="280" r="1" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <!-- Spacecraft Body Gradient -->
+    <linearGradient id="spacecraftGradient" x1="200" y1="50" x2="200" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E00FF" />
+      <stop offset="0.5" stop-color="#3A0088" />
+      <stop offset="1" stop-color="#1A003D" />
+    </linearGradient>
+    
+    <!-- Wing Gradient -->
+    <linearGradient id="wingGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6E00FF" />
+      <stop offset="1" stop-color="#00D9FF" />
+    </linearGradient>
+    
+    <!-- Window Gradient -->
+    <radialGradient id="windowGradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="0.7" stop-color="#00D9FF" />
+      <stop offset="1" stop-color="#00D9FF" stop-opacity="0.5" />
+    </radialGradient>
+    
+    <!-- Flame Gradient -->
+    <linearGradient id="flameGradient" x1="200" y1="320" x2="200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF3E7F" />
+      <stop offset="0.5" stop-color="#FF9C5E" />
+      <stop offset="1" stop-color="#FFD056" />
+    </linearGradient>
+    
+    <!-- Satellite Gradient -->
+    <radialGradient id="satelliteGradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#00D9FF" />
+    </radialGradient>
+    
+    <!-- Glow Effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Animation for spacecraft hover effect -->
+  <animateTransform 
+    xlink:href="#spacecraft"
+    attributeName="transform"
+    type="translate"
+    values="0,-5;0,5;0,-5"
+    dur="4s"
+    repeatCount="indefinite" />
+</svg>

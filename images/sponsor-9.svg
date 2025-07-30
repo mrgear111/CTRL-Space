@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <!-- Main gradient for the logo -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9966" />
+      <stop offset="100%" stop-color="#FF5E62" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Metal texture -->
+    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CCCCCC" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CCCCCC" />
+    </linearGradient>
+    
+    <!-- Ground texture -->
+    <pattern id="groundPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <circle cx="5" cy="5" r="1" fill="#FFFFFF" opacity="0.2" />
+      <circle cx="15" cy="15" r="1.5" fill="#FFFFFF" opacity="0.1" />
+      <circle cx="10" cy="18" r="1" fill="#FFFFFF" opacity="0.15" />
+    </pattern>
+  </defs>
+  
+  <!-- Logo background -->
+  <rect width="200" height="100" fill="transparent" />
+  
+  <!-- Ground surface -->
+  <path d="M50,65 Q100,55 150,65 L150,85 L50,85 Z" fill="url(#groundPattern)" stroke="#FFFFFF" stroke-width="0.5" opacity="0.3" />
+  
+  <!-- Main logo shape - a space rover -->
+  <g transform="translate(100, 55)">
+    <!-- Rover body -->
+    <rect x="-20" y="-15" width="40" height="20" rx="5" ry="5" fill="url(#metalGradient)" stroke="#444444" stroke-width="1" />
+    
+    <!-- Rover details -->
+    <rect x="-15" y="-10" width="30" height="10" rx="2" ry="2" fill="#333333" stroke="#444444" stroke-width="0.5" />
+    
+    <!-- Rover wheels -->
+    <g transform="translate(-25, 10)">
+      <circle cx="0" cy="0" r="8" fill="#333333" stroke="#FFFFFF" stroke-width="1" />
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF" opacity="0.5" />
+    </g>
+    
+    <g transform="translate(25, 10)">
+      <circle cx="0" cy="0" r="8" fill="#333333" stroke="#FFFFFF" stroke-width="1" />
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF" opacity="0.5" />
+    </g>
+    
+    <g transform="translate(-25, -5)">
+      <circle cx="0" cy="0" r="5" fill="#333333" stroke="#FFFFFF" stroke-width="1" />
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+      <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.5" />
+    </g>
+    
+    <g transform="translate(25, -5)">
+      <circle cx="0" cy="0" r="5" fill="#333333" stroke="#FFFFFF" stroke-width="1" />
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+      <circle cx="0" cy="0" r="1" fill="#FFFFFF" opacity="0.5" />
+    </g>
+    
+    <!-- Rover antenna -->
+    <line x1="-10" y1="-15" x2="-10" y2="-25" stroke="#FFFFFF" stroke-width="1" />
+    <circle cx="-10" cy="-27" r="2" fill="#FFFFFF" />
+    
+    <!-- Rover solar panel -->
+    <rect x="0" y="-20" width="15" height="10" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="0.5" opacity="0.9" />
+    
+    <!-- Panel details -->
+    <line x1="3" y1="-20" x2="3" y2="-10" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="6" y1="-20" x2="6" y2="-10" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="9" y1="-20" x2="9" y2="-10" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    <line x1="12" y1="-20" x2="12" y2="-10" stroke="#FFFFFF" stroke-width="0.5" opacity="0.8" />
+    
+    <!-- Rover camera -->
+    <rect x="10" y="-15" width="15" height="8" rx="2" ry="2" fill="#333333" stroke="#FFFFFF" stroke-width="0.5" />
+    <circle cx="17" cy="-11" r="3" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="0.5" />
+    <circle cx="17" cy="-11" r="1" fill="#FFFFFF" opacity="0.5" />
+    
+    <!-- Light beam from camera -->
+    <path d="M17,-11 L30,-20 L30,-2 Z" fill="url(#logoGradient)" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Company name -->
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ROVERTECH</text>
+</svg>

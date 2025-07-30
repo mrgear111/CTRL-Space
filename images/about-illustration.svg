@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="400" viewBox="0 0 500 400">
+  <!-- Definitions for reusable elements -->
+  <defs>
+    <!-- Glow filter for elements -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Space station gradient -->
+    <linearGradient id="stationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A8A8A"/>
+      <stop offset="50%" stop-color="#DADADA"/>
+      <stop offset="100%" stop-color="#6A6A6A"/>
+    </linearGradient>
+    
+    <!-- Earth gradient -->
+    <radialGradient id="earthGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#4B78C4"/>
+      <stop offset="65%" stop-color="#2A4B8C"/>
+      <stop offset="100%" stop-color="#1A2F5C"/>
+    </radialGradient>
+    
+    <!-- Hologram gradient -->
+    <linearGradient id="hologramGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFFF" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0088FF" stop-opacity="0.3"/>
+    </linearGradient>
+    
+    <!-- Tech circuit pattern -->
+    <pattern id="circuitPattern" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="scale(0.5)">
+      <path d="M0,0 L10,0 L10,10 L20,10 L20,20 L30,20 L30,30 L40,30 L40,40 L50,40" stroke="#00FFFF" stroke-width="1" fill="none"/>
+      <path d="M0,50 L10,50 L10,40 L20,40 L20,30 L30,30 L30,20 L40,20 L40,10 L50,10" stroke="#00FFFF" stroke-width="1" fill="none"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background elements -->
+  <rect width="500" height="400" fill="transparent"/>
+  
+  <!-- Earth in background -->
+  <circle cx="80" cy="320" r="150" fill="url(#earthGradient)" opacity="0.7"/>
+  
+  <!-- Cloud/atmosphere layers on Earth -->
+  <path d="M80,170 C20,200 -20,280 30,350 C80,420 180,400 230,350 C280,300 200,250 150,240 C100,230 140,140 80,170Z" fill="white" opacity="0.1"/>
+  
+  <!-- Space station -->
+  <g transform="translate(250, 200) rotate(15)">
+    <!-- Main body -->
+    <rect x="-80" y="-15" width="160" height="30" rx="5" fill="url(#stationGradient)" stroke="#444" stroke-width="1"/>
+    
+    <!-- Solar panels -->
+    <g transform="translate(-90, 0)">
+      <rect x="-60" y="-40" width="50" height="80" fill="#2A4B8C" stroke="#444" stroke-width="1"/>
+      <rect x="-60" y="-40" width="50" height="80" fill="url(#circuitPattern)" opacity="0.3"/>
+      <rect x="-65" y="-2" width="10" height="4" fill="#888" stroke="#444" stroke-width="0.5"/>
+    </g>
+    
+    <g transform="translate(90, 0)">
+      <rect x="10" y="-40" width="50" height="80" fill="#2A4B8C" stroke="#444" stroke-width="1"/>
+      <rect x="10" y="-40" width="50" height="80" fill="url(#circuitPattern)" opacity="0.3"/>
+      <rect x="55" y="-2" width="10" height="4" fill="#888" stroke="#444" stroke-width="0.5"/>
+    </g>
+    
+    <!-- Modules -->
+    <circle cx="-50" cy="0" r="20" fill="#DADADA" stroke="#444" stroke-width="1"/>
+    <circle cx="0" cy="0" r="25" fill="#DADADA" stroke="#444" stroke-width="1"/>
+    <circle cx="50" cy="0" r="20" fill="#DADADA" stroke="#444" stroke-width="1"/>
+    
+    <!-- Windows -->
+    <circle cx="-50" cy="0" r="10" fill="#2A4B8C" opacity="0.7" stroke="#444" stroke-width="0.5"/>
+    <circle cx="0" cy="0" r="12" fill="#2A4B8C" opacity="0.7" stroke="#444" stroke-width="0.5"/>
+    <circle cx="50" cy="0" r="10" fill="#2A4B8C" opacity="0.7" stroke="#444" stroke-width="0.5"/>
+    
+    <!-- Antennas -->
+    <line x1="-50" y1="-20" x2="-50" y2="-40" stroke="#888" stroke-width="2"/>
+    <circle cx="-50" cy="-45" r="5" fill="#888" stroke="#444" stroke-width="0.5"/>
+    
+    <line x1="50" y1="-20" x2="50" y2="-40" stroke="#888" stroke-width="2"/>
+    <circle cx="50" cy="-45" r="5" fill="#888" stroke="#444" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Holographic display -->
+  <g transform="translate(350, 120)">
+    <!-- Display frame -->
+    <rect x="-60" y="-80" width="120" height="160" rx="10" fill="url(#hologramGradient)" opacity="0.2" stroke="#00FFFF" stroke-width="1" stroke-opacity="0.7"/>
+    
+    <!-- Display content - rocket blueprint -->
+    <g opacity="0.9" stroke="#00FFFF" stroke-width="1" fill="none">
+      <!-- Rocket outline -->
+      <path d="M0,-60 L-15,-30 L-15,30 L-25,50 L-25,60 L25,60 L25,50 L15,30 L15,-30 Z" stroke-opacity="0.8"/>
+      
+      <!-- Details -->
+      <line x1="-15" y1="0" x2="15" y2="0" stroke-opacity="0.6"/>
+      <line x1="-15" y1="30" x2="15" y2="30" stroke-opacity="0.6"/>
+      <line x1="0" y1="-60" x2="0" y2="60" stroke-opacity="0.4" stroke-dasharray="2,2"/>
+      
+      <!-- Fins -->
+      <path d="M-15,30 L-40,60 L-25,60" stroke-opacity="0.7"/>
+      <path d="M15,30 L40,60 L25,60" stroke-opacity="0.7"/>
+      
+      <!-- Measurement lines -->
+      <line x1="-50" y1="-60" x2="-5" y2="-60" stroke-opacity="0.5" stroke-dasharray="1,1"/>
+      <line x1="-50" y1="60" x2="-30" y2="60" stroke-opacity="0.5" stroke-dasharray="1,1"/>
+      <line x1="-50" y1="-60" x2="-50" y2="60" stroke-opacity="0.5" stroke-dasharray="1,1"/>
+      
+      <!-- Measurement marks -->
+      <line x1="-50" y1="-60" x2="-53" y2="-60" stroke-opacity="0.5"/>
+      <line x1="-50" y1="-30" x2="-53" y2="-30" stroke-opacity="0.5"/>
+      <line x1="-50" y1="0" x2="-53" y2="0" stroke-opacity="0.5"/>
+      <line x1="-50" y1="30" x2="-53" y2="30" stroke-opacity="0.5"/>
+      <line x1="-50" y1="60" x2="-53" y2="60" stroke-opacity="0.5"/>
+    </g>
+    
+    <!-- Circular UI elements -->
+    <circle cx="40" cy="-60" r="10" stroke="#00FFFF" stroke-width="1" fill="none" stroke-opacity="0.7"/>
+    <circle cx="40" cy="-60" r="5" stroke="#00FFFF" stroke-width="1" fill="none" stroke-opacity="0.7"/>
+    
+    <circle cx="40" cy="-30" r="8" stroke="#00FFFF" stroke-width="1" fill="none" stroke-opacity="0.7"/>
+    <circle cx="40" cy="0" r="8" stroke="#00FFFF" stroke-width="1" fill="none" stroke-opacity="0.7"/>
+    
+    <!-- Data points -->
+    <circle cx="-15" cy="0" r="2" fill="#00FFFF" fill-opacity="0.9"/>
+    <circle cx="15" cy="0" r="2" fill="#00FFFF" fill-opacity="0.9"/>
+    <circle cx="-15" cy="30" r="2" fill="#00FFFF" fill-opacity="0.9"/>
+    <circle cx="15" cy="30" r="2" fill="#00FFFF" fill-opacity="0.9"/>
+  </g>
+  
+  <!-- Floating tech particles -->
+  <g>
+    <circle cx="150" cy="80" r="2" fill="#00FFFF" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="60" r="1.5" fill="#00FFFF" opacity="0.6" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="100" r="2" fill="#00FFFF" opacity="0.7" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="70" r="1.5" fill="#00FFFF" opacity="0.5" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="90" r="2" fill="#00FFFF" opacity="0.6" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="150" r="1.5" fill="#00FFFF" opacity="0.7" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Satellite -->
+  <g transform="translate(150, 150) rotate(-30)">
+    <rect x="-25" y="-10" width="50" height="20" fill="#DADADA" stroke="#444" stroke-width="1"/>
+    
+    <!-- Solar panels -->
+    <rect x="-70" y="-5" width="40" height="10" fill="#2A4B8C" stroke="#444" stroke-width="1"/>
+    <rect x="-70" y="-5" width="40" height="10" fill="url(#circuitPattern)" opacity="0.3"/>
+    
+    <rect x="30" y="-5" width="40" height="10" fill="#2A4B8C" stroke="#444" stroke-width="1"/>
+    <rect x="30" y="-5" width="40" height="10" fill="url(#circuitPattern)" opacity="0.3"/>
+    
+    <!-- Antenna -->
+    <line x1="0" y1="-10" x2="0" y2="-25" stroke="#888" stroke-width="1"/>
+    <circle cx="0" cy="-30" r="5" fill="#888" stroke="#444" stroke-width="0.5"/>
+    
+    <!-- Satellite movement animation -->
+    <animateTransform attributeName="transform" type="translate" from="150,150" to="170,130" dur="10s" repeatCount="indefinite" additive="sum"/>
+  </g>
+  
+  <!-- Orbiting path indicator -->
+  <ellipse cx="160" cy="140" rx="30" ry="20" stroke="#00FFFF" stroke-width="0.5" stroke-dasharray="2,2" fill="none" opacity="0.3" transform="rotate(-30, 160, 140)"/>
+</svg>

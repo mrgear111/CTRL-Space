@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <!-- Main gradient for the logo -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E2DE2" />
+      <stop offset="100%" stop-color="#4A00E0" />
+    </linearGradient>
+    
+    <!-- Star glow filter -->
+    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Logo background -->
+  <rect width="200" height="100" fill="transparent" />
+  
+  <!-- Main logo shape - a constellation -->
+  <g transform="translate(100, 45)">
+    <!-- Stars in constellation -->
+    <circle cx="-30" cy="-15" r="3" fill="#FFFFFF" filter="url(#starGlow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" begin="0s" />
+    </circle>
+    
+    <circle cx="-10" cy="10" r="3" fill="#FFFFFF" filter="url(#starGlow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" begin="0.5s" />
+    </circle>
+    
+    <circle cx="15" cy="-5" r="3" fill="#FFFFFF" filter="url(#starGlow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" begin="1s" />
+    </circle>
+    
+    <circle cx="30" cy="15" r="3" fill="#FFFFFF" filter="url(#starGlow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" begin="1.5s" />
+    </circle>
+    
+    <!-- Constellation lines -->
+    <line x1="-30" y1="-15" x2="-10" y2="10" stroke="url(#logoGradient)" stroke-width="1" opacity="0.8" />
+    <line x1="-10" y1="10" x2="15" y2="-5" stroke="url(#logoGradient)" stroke-width="1" opacity="0.8" />
+    <line x1="15" y1="-5" x2="30" y2="15" stroke="url(#logoGradient)" stroke-width="1" opacity="0.8" />
+    <line x1="30" y1="15" x2="-30" y2="-15" stroke="url(#logoGradient)" stroke-width="1" opacity="0.8" />
+    
+    <!-- Central element -->
+    <circle cx="0" cy="0" r="8" fill="url(#logoGradient)" stroke="#FFFFFF" stroke-width="1" />
+    <circle cx="0" cy="0" r="4" fill="#FFFFFF" opacity="0.5" />
+  </g>
+  
+  <!-- Company name -->
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">STARLINK</text>
+</svg>

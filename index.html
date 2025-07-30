@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ctrol + Space Hackathon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <div class="rocket">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="loader-text">Launching</div>
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <div class="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="SpaceTech Hackathon Logo">
+                <span>Ctrol + Space</span>
+            </div>
+            <div class="nav-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#register" class="register-btn">Register Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="glitch" data-text="Ctrol + Space Hackathon">Ctrol + Space Hackathon</h1>
+                    <p class="subtitle">Innovate Beyond Boundaries</p>
+                    <p class="collage-name">NST ADYPU X LMNIT JAIPUR</p>
+                    <p class="date">Aug 15-17, 2025</p>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <span>Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <span>Seconds</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#register" class="btn primary-btn">Register Now</a>
+                        <a href="#about" class="btn secondary-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/astronaut.svg" alt="Spacecraft illustration">
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="scroll-arrow"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About The Hackathon</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p style="margin: 20px; font-size: 18px;"> Ctrol + SpaceHackathon brings together innovators, developers, engineers, and space enthusiasts to solve real-world challenges in space technology. Over 48 hours, teams will collaborate to create groundbreaking solutions that push the boundaries of what's possible in space exploration and technology.</p>
+                        <p style="margin: 20px; font-size: 18px;">Whether you're a seasoned developer, a space science expert, or simply passionate about the cosmos, this hackathon offers a unique opportunity to contribute to the future of space technology.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Participants</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">48</span>
+                                <span class="stat-label">Hours</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">60K</span>
+                                <span class="stat-label">In Prizes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/about-illustration.svg" alt="Space technology illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="challenges">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Hackathon Challenges</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h3>Satellite Data Analysis</h3>
+                        <p>Develop innovative solutions using satellite data to address environmental monitoring, disaster response, or urban planning challenges.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Space Robotics</h3>
+                        <p>Design autonomous robotic systems for space exploration, maintenance, or construction that can operate in extreme environments.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-meteor"></i>
+                        </div>
+                        <h3>Asteroid Mining</h3>
+                        <p>Create solutions for identifying, reaching, and extracting valuable resources from asteroids to support space exploration and Earth's resource needs.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <h3>Life Support Systems</h3>
+                        <p>Develop innovative life support technologies for long-duration space missions, focusing on sustainability and resource efficiency.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3>Space Communications</h3>
+                        <p>Design next-generation communication systems for reliable data transmission across vast distances in space.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Launch Technologies</h3>
+                        <p>Innovate on rocket design, propulsion systems, or launch methodologies to reduce costs and increase accessibility to space.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="schedule">
+            <div class="container">
+                <div class="section-header" style="color: black;">
+                    <h1>Event Schedule</h1>
+                    <div style="color: black;"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 1 - October 15</div>
+                        <div class="timeline-content">
+                            <h3>Opening Ceremony</h3>
+                            <p>9:00 AM - 10:30 AM</p>
+                            <p>Welcome address, introduction to challenges, and keynote speech from industry leaders.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 1 - October 15</div>
+                        <div class="timeline-content">
+                            <h3>Team Formation & Ideation</h3>
+                            <p>10:30 AM - 12:00 PM</p>
+                            <p>Form teams, brainstorm ideas, and begin planning your project approach.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 1 - October 15</div>
+                        <div class="timeline-content">
+                            <h3>Hacking Begins</h3>
+                            <p>12:00 PM</p>
+                            <p>Start working on your projects with mentorship sessions available throughout the day.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 2 - October 16</div>
+                        <div class="timeline-content">
+                            <h3>Workshop Sessions</h3>
+                            <p>10:00 AM - 2:00 PM</p>
+                            <p>Specialized workshops on space technology, AI integration, and prototype development.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 2 - October 16</div>
+                        <div class="timeline-content">
+                            <h3>Mentor Check-ins</h3>
+                            <p>3:00 PM - 6:00 PM</p>
+                            <p>Get feedback on your progress from industry experts and refine your approach.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 3 - October 17</div>
+                        <div class="timeline-content">
+                            <h3>Final Submissions</h3>
+                            <p>10:00 AM</p>
+                            <p>Submit your projects for evaluation by the judging panel.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 3 - October 17</div>
+                        <div class="timeline-content">
+                            <h3>Project Presentations</h3>
+                            <p>1:00 PM - 4:00 PM</p>
+                            <p>Teams present their solutions to judges and attendees.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Day 3 - October 17</div>
+                        <div class="timeline-content">
+                            <h3>Awards Ceremony</h3>
+                            <p>5:00 PM - 6:30 PM</p>
+                            <p>Announcement of winners, prize distribution, and closing remarks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            
+        </section>
+
+        <section id="sponsors" class="sponsors">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Sponsors</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="sponsors-content">
+                    <p>SpaceTech Hackathon is proudly supported by leading organizations in space technology and innovation.</p>
+                    <div class="sponsors-grid">
+                        <div class="sponsor-tier">
+                            <h3>Platinum Sponsors</h3>
+                            <div class="sponsor-logos platinum">
+                                <div class="sponsor-logo"><img src="images/sponsor-1.svg" alt="Sponsor 1"></div>
+                                <div class="sponsor-logo"><img src="images/sponsor-2.svg" alt="Sponsor 2"></div>
+                            </div>
+                        </div>
+                        <div class="sponsor-tier">
+                            <h3>Gold Sponsors</h3>
+                            <div class="sponsor-logos gold">
+                                <div class="sponsor-logo"><img src="images/sponsor-3.svg" alt="Sponsor 3"></div>
+                                <div class="sponsor-logo"><img src="images/sponsor-4.svg" alt="Sponsor 4"></div>
+                                <div class="sponsor-logo"><img src="images/sponsor-5.svg" alt="Sponsor 5"></div>
+                            </div>
+                        </div>
+                        <div class="sponsor-tier">
+                            <h3>Silver Sponsors</h3>
+                            <div class="sponsor-logos silver">
+                                <div class="sponsor-logo"><img src="images/sponsor-6.svg" alt="Sponsor 6"></div>
+                                <div class="sponsor-logo"><img src="images/sponsor-7.svg" alt="Sponsor 7"></div>
+                                <div class="sponsor-logo"><img src="images/sponsor-8.svg" alt="Sponsor 8"></div>
+                                <div class="sponsor-logo"><img src="images/sponsor-9.svg" alt="Sponsor 9"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="become-sponsor">
+                        <h3>Interested in becoming a sponsor?</h3>
+                        <p>Join leading organizations in supporting innovation in space technology.</p>
+                        <a href="#contact" class="btn primary-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Who can participate?</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The hackathon is open to students, professionals, and space enthusiasts of all backgrounds. Participants must be 18 years or older. Teams can consist of 2-5 members.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I need to have a team before registering?</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, you can register individually and form teams during the team formation session on the first day of the hackathon. We'll have activities to help you find team members with complementary skills.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What should I bring?</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Bring your laptop, charger, any hardware you plan to use for your project, and personal items for the duration of the event. Food and refreshments will be provided.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is there a registration fee?</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, participation in the SpaceTech Hackathon is completely free, thanks to our generous sponsors.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What are the judging criteria?</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Projects will be judged based on innovation, technical complexity, practicality, potential impact, and presentation quality. Detailed criteria will be shared during the opening ceremony.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Will there be mentors available?</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, industry experts and mentors will be available throughout the hackathon to provide guidance, technical support, and feedback on your projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="register">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Register Now</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="register-content">
+                    <div class="register-text">
+                        <p>Ready to join the SpaceTech Hackathon? Register now to secure your spot and be part of this exciting journey into space innovation!</p>
+                        <ul class="register-benefits">
+                            <li><i class="fas fa-check-circle"></i> Connect with industry experts and like-minded innovators</li>
+                            <li><i class="fas fa-check-circle"></i> Access to exclusive workshops and resources</li>
+                            <li><i class="fas fa-check-circle"></i> Opportunity to win exciting prizes worth $50,000</li>
+                            <li><i class="fas fa-check-circle"></i> Showcase your skills to potential employers and investors</li>
+                        </ul>
+                    </div>
+                    <div class="register-form">
+                        <form id="registration-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="occupation">Occupation</label>
+                                <select id="occupation" name="occupation" required>
+                                    <option value="" disabled selected>Select your occupation</option>
+                                    <option value="student">Student</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="researcher">Researcher</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="skills">Skills (comma separated)</label>
+                                <input type="text" id="skills" name="skills" placeholder="e.g., Python, Machine Learning, Hardware Design">
+                            </div>
+                            <div class="form-group">
+                                <label for="challenge">Preferred Challenge</label>
+                                <select id="challenge" name="challenge">
+                                    <option value="" disabled selected>Select a challenge</option>
+                                    <option value="satellite">Satellite Data Analysis</option>
+                                    <option value="robotics">Space Robotics</option>
+                                    <option value="asteroid">Asteroid Mining</option>
+                                    <option value="life-support">Life Support Systems</option>
+                                    <option value="communications">Space Communications</option>
+                                    <option value="launch">Launch Technologies</option>
+                                    <option value="undecided">Undecided</option>
+                                </select>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the terms and conditions</label>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="SpaceTech Hackathon Logo">
+                    <span>SpaceTech</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#challenges">Challenges</a></li>
+                            <li><a href="#schedule">Schedule</a></li>
+                            <li><a href="#sponsors">Sponsors</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Innovation Street, Tech City</li>
+                            <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                            <li><i class="fas fa-envelope"></i> info@spacetechhackathon.com</li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SpaceTech Hackathon. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
