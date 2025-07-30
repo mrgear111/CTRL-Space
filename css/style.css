@@ -343,7 +343,7 @@ nav {
 }
 
 .register-btn {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(45deg, var(--dark-bg), var(--dark-bg));
     padding: 10px 20px;
     border-radius: 30px;
     margin-left: 15px;
@@ -351,7 +351,7 @@ nav {
 }
 
 .register-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); 
     box-shadow: 0 7px 20px rgba(110, 0, 255, 0.4);
 }
 
@@ -360,7 +360,7 @@ nav {
     flex-direction: column;
     cursor: pointer;
 }
-
+/*
 .bar {
     width: 25px;
     height: 3px;
@@ -718,7 +718,7 @@ nav {
 
 /* ===== SCHEDULE SECTION ===== */
 .schedule {
-    background-color: var(--primary-color);
+    background-color: var(--darker-bg);
     position: relative;
     overflow: hidden;
 }
@@ -737,7 +737,7 @@ nav {
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: var(--dark-bg);
+    background: var(--primary-color);
 }
 
 .timeline-item {
@@ -753,8 +753,8 @@ nav {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: var(--dark-bg);
-    box-shadow: var(--darker-bg);
+    background: var(--primary-color);
+    box-shadow: var(--glow-shadow);
     z-index: 2;
 }
 
@@ -775,7 +775,7 @@ nav {
     left: 55%;
     width: 40%;
     padding: 20px;
-    background-color: var(--dark-bg);
+    background-color: var(--glass-border);
     border-radius: 10px;
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
