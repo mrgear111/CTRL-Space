@@ -475,4 +475,59 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!('ontouchstart' in window)) {
         initCursorEffects();
     }
+
+    // Initialize countdown timer with smooth updates
+    function updateCountdown() {
+        const eventDate = new Date('August 13, 2025 10:00:00').getTime();
+        
+        function update() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            // If the countdown is finished
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector('.countdown').innerHTML = '<div class="event-started">The event has started!</div>';
+                return;
+            }
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Get DOM elements once
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            // Only update if the value has changed
+            if (daysEl && daysEl.textContent !== days.toString().padStart(2, '0')) {
+                daysEl.textContent = days.toString().padStart(2, '0');
+            }
+            if (hoursEl && hoursEl.textContent !== hours.toString().padStart(2, '0')) {
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+            }
+            if (minutesEl && minutesEl.textContent !== minutes.toString().padStart(2, '0')) {
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+            }
+            if (secondsEl) {
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            // Schedule next update with requestAnimationFrame for smoother animation
+            requestAnimationFrame(update);
+        }
+        
+        // Start the update loop
+        update();
+    }
+    
+    // Start the countdown
+    let countdownTimer = setInterval(updateCountdown, 1000);
+    
+    // Initial call to display the countdown immediately
+    updateCountdown();
 });
