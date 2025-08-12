@@ -3,25 +3,174 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize GSAP and ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
     
-    // Preloader animation
-    const loader = document.querySelector('.loader');
-    const loaderTimeline = gsap.timeline();
+    // Initialize loading screen first
+    initLoadingScreen();
     
-    loaderTimeline
-        .to('.loader-progress', {
-            width: '100%',
-            duration: 2,
-            ease: 'power2.inOut'
+    // Initialize all other animations
+    initAnimations();
+    
+    // Loading Screen Animation
+    function initLoadingScreen() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const loadingBar = document.getElementById('loadingBar');
+        const loadingPercentage = document.getElementById('loadingPercentage');
+        const loadingChars = document.querySelectorAll('.loading-text-char');
+        const loadingSubtitle = document.querySelector('.loading-subtitle');
+        const loadingLogos = document.querySelectorAll('.loading-logo');
+        const loadingConnector = document.querySelector('.loading-connector');
+        
+        // Initial setup
+        gsap.set(loadingChars, { 
+            opacity: 0, 
+            y: 50, 
+            rotationY: 90,
+            scale: 0.5
+        });
+        gsap.set(loadingSubtitle, { opacity: 0, y: 20 });
+        gsap.set(loadingPercentage, { opacity: 0 });
+        gsap.set(loadingBar, { width: '0%' });
+        gsap.set(loadingLogos, { scale: 0, rotation: 180 });
+        gsap.set(loadingConnector, { scale: 0, opacity: 0 });
+        
+        // Loading timeline
+        const loadingTl = gsap.timeline();
+        
+        // Logos entrance with stagger
+        loadingTl.to(loadingLogos, {
+            duration: 1,
+            scale: 1,
+            rotation: 0,
+            stagger: 0.3,
+            ease: "back.out(1.7)"
         })
-        .to(loader, {
-            opacity: 0,
+        
+        // Connector appears
+        .to(loadingConnector, {
             duration: 0.5,
+            scale: 1,
+            opacity: 1,
+            ease: "back.out(1.2)"
+        }, "-=0.3")
+        
+        // Animate characters with stagger
+        .to(loadingChars, {
+            duration: 0.8,
+            opacity: 1,
+            y: 0,
+            rotationY: 0,
+            scale: 1,
+            stagger: {
+                amount: 2,
+                from: "start",
+                ease: "power2.out"
+            },
+            ease: "back.out(1.2)"
+        }, "-=0.5")
+        
+        // Subtitle fade in
+        .to(loadingSubtitle, {
+            duration: 0.6,
+            opacity: 1,
+            y: 0,
+            ease: "power2.out"
+        }, "-=1")
+        
+        // Progress bar animation
+        .to(loadingPercentage, {
+            duration: 0.3,
+            opacity: 1
+        }, "-=0.5")
+        .to(loadingBar, {
+            duration: 3,
+            width: '100%',
+            ease: "power2.inOut"
+        })
+        
+        // Animate percentage counter
+        .to({ progress: 0 }, {
+            duration: 3,
+            progress: 100,
+            ease: "power2.inOut",
+            onUpdate: function() {
+                loadingPercentage.textContent = Math.round(this.targets()[0].progress) + '%';
+            }
+        }, "-=3")
+        
+        // Character exit animation
+        .to(loadingChars, {
+            duration: 0.6,
+            opacity: 0,
+            y: -30,
+            rotationY: -90,
+            scale: 1.2,
+            stagger: {
+                amount: 0.8,
+                from: "center",
+                ease: "power2.in"
+            }
+        }, "+=0.5")
+        
+        // Final exit
+        .to([loadingLogos, loadingConnector, loadingSubtitle, loadingPercentage, '.loading-progress'], {
+            duration: 0.8,
+            opacity: 0,
+            y: -50,
+            scale: 0.8,
+            stagger: 0.1,
+            ease: "power2.in"
+        }, "-=0.3")
+        
+        // Screen fade out
+        .to(loadingScreen, {
+            duration: 1,
+            opacity: 0,
+            scale: 1.1,
+            ease: "power2.inOut",
             onComplete: () => {
-                loader.style.display = 'none';
-                // Start animations after loader is hidden
-                initAnimations();
+                loadingScreen.style.display = 'none';
+                // Enable body scroll
+                document.body.style.overflow = 'auto';
+                
+                // Trigger main content animations
+                triggerMainContentAnimations();
             }
         });
+        
+        // Disable body scroll during loading
+        document.body.style.overflow = 'hidden';
+        
+        // Character hover effects during loading
+        loadingChars.forEach((char, index) => {
+            gsap.to(char, {
+                duration: 2 + (index * 0.1),
+                y: "+=10",
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 3 + (index * 0.1)
+            });
+        });
+    }
+    
+    // Trigger main content animations after loading
+    function triggerMainContentAnimations() {
+        // Hero section entrance
+        gsap.from('.hero-content > *', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+        
+        gsap.from('.hero-image', {
+            duration: 1.2,
+            x: 100,
+            opacity: 0,
+            ease: "power2.out",
+            delay: 0.3
+        });
+    }
     
     // Initialize all animations
     function initAnimations() {
@@ -39,38 +188,64 @@ document.addEventListener('DOMContentLoaded', () => {
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
         
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            navToggle.classList.toggle('active');
-            
-            // Animate hamburger to X
-            const bars = navToggle.querySelectorAll('.bar');
-            if (navToggle.classList.contains('active')) {
-                gsap.to(bars[0], { rotate: 45, y: 9, duration: 0.3 });
-                gsap.to(bars[1], { opacity: 0, duration: 0.3 });
-                gsap.to(bars[2], { rotate: -45, y: -9, duration: 0.3 });
-            } else {
-                gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
-                gsap.to(bars[1], { opacity: 1, duration: 0.3 });
-                gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
-            }
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    navToggle.classList.remove('active');
-                    
-                    // Reset hamburger animation
-                    const bars = navToggle.querySelectorAll('.bar');
-                    gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
-                    gsap.to(bars[1], { opacity: 1, duration: 0.3 });
-                    gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                
+                // Animate hamburger to X (works with both .bar and span elements)
+                const bars = navToggle.querySelectorAll('.bar, span');
+                if (navToggle.classList.contains('active')) {
+                    if (bars.length >= 3) {
+                        gsap.to(bars[0], { rotate: 45, y: 9, duration: 0.3 });
+                        gsap.to(bars[1], { opacity: 0, duration: 0.3 });
+                        gsap.to(bars[2], { rotate: -45, y: -9, duration: 0.3 });
+                    }
+                } else {
+                    if (bars.length >= 3) {
+                        gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
+                        gsap.to(bars[1], { opacity: 1, duration: 0.3 });
+                        gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
+                    }
                 }
             });
-        });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        
+                        // Reset hamburger animation
+                        const bars = navToggle.querySelectorAll('.bar, span');
+                        if (bars.length >= 3) {
+                            gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
+                            gsap.to(bars[1], { opacity: 1, duration: 0.3 });
+                            gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
+                        }
+                    }
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        
+                        // Reset hamburger animation
+                        const bars = navToggle.querySelectorAll('.bar, span');
+                        if (bars.length >= 3) {
+                            gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
+                            gsap.to(bars[1], { opacity: 1, duration: 0.3 });
+                            gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
+                        }
+                    }
+                }
+            });
+        }
         
         // Hero section animations
         const heroTimeline = gsap.timeline();
@@ -313,6 +488,88 @@ document.addEventListener('DOMContentLoaded', () => {
             y: -600,
             ease: 'none'
         });
+        
+        // Rocket launch animation
+        const rocketContainer = document.querySelector('.rocket-3d');
+        if (rocketContainer) {
+            // Set up initial rocket state
+            gsap.set(rocketContainer, { y: 0, scale: 1, opacity: 1 });
+            
+            // Create scroll-triggered rocket launch
+            gsap.to(rocketContainer, {
+                scrollTrigger: {
+                    trigger: '.schedule',
+                    start: 'top 50%',
+                    end: 'bottom 20%',
+                    scrub: 2,
+                    onEnter: () => {
+                        rocketContainer.classList.add('rocket-launching');
+                        // Add exhaust effect
+                        const exhaust = rocketContainer.querySelector('.rocket-exhaust');
+                        if (exhaust) {
+                            exhaust.style.opacity = '1';
+                        }
+                    },
+                    onLeave: () => {
+                        // Reset rocket after it leaves view
+                        setTimeout(() => {
+                            rocketContainer.classList.remove('rocket-launching');
+                            gsap.set(rocketContainer, { y: 0, scale: 1, opacity: 1 });
+                            const exhaust = rocketContainer.querySelector('.rocket-exhaust');
+                            if (exhaust) {
+                                exhaust.style.opacity = '0';
+                            }
+                        }, 1000);
+                    },
+                    onEnterBack: () => {
+                        rocketContainer.classList.remove('rocket-launching');
+                        gsap.set(rocketContainer, { y: 0, scale: 1, opacity: 1 });
+                    }
+                },
+                y: -800,
+                scale: 0.3,
+                opacity: 0,
+                duration: 4,
+                ease: 'power2.out'
+            });
+            
+            // Add click-to-launch functionality
+            rocketContainer.addEventListener('click', () => {
+                if (!rocketContainer.classList.contains('rocket-launching')) {
+                    rocketContainer.classList.add('rocket-launching');
+                    
+                    // Launch animation timeline
+                    const launchTl = gsap.timeline({
+                        onComplete: () => {
+                            // Reset after 2 seconds
+                            setTimeout(() => {
+                                rocketContainer.classList.remove('rocket-launching');
+                                gsap.set(rocketContainer, { y: 0, scale: 1, opacity: 1 });
+                                const exhaust = rocketContainer.querySelector('.rocket-exhaust');
+                                if (exhaust) {
+                                    exhaust.style.opacity = '0';
+                                }
+                            }, 2000);
+                        }
+                    });
+                    
+                    launchTl
+                        .to(rocketContainer, {
+                            y: -800,
+                            scale: 0.3,
+                            opacity: 0,
+                            duration: 5,
+                            ease: 'power2.out'
+                        });
+                    
+                    // Show exhaust
+                    const exhaust = rocketContainer.querySelector('.rocket-exhaust');
+                    if (exhaust) {
+                        exhaust.style.opacity = '1';
+                    }
+                }
+            });
+        }
     }
     
     // FAQ accordion functionality
@@ -324,25 +581,82 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggle = item.querySelector('.faq-toggle');
         
         question.addEventListener('click', () => {
-            // Close all other answers
+            const isActive = answer.classList.contains('active');
+            
+            // Close all other answers with smooth animation
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
-                    otherItem.querySelector('.faq-answer').classList.remove('active');
-                    otherItem.querySelector('.faq-toggle').classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherToggle = otherItem.querySelector('.faq-toggle');
+                    
+                    otherAnswer.classList.remove('active');
+                    otherToggle.classList.remove('active');
+                    otherToggle.innerHTML = '<i class="fas fa-plus"></i>';
+                    
+                    // GSAP animation for closing
+                    gsap.to(otherAnswer, {
+                        maxHeight: 0,
+                        padding: '0 20px',
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
                 }
             });
             
             // Toggle current answer
-            answer.classList.toggle('active');
-            toggle.classList.toggle('active');
-            
-            // Change icon
-            if (toggle.classList.contains('active')) {
+            if (!isActive) {
+                // Opening animation
+                answer.classList.add('active');
+                toggle.classList.add('active');
                 toggle.innerHTML = '<i class="fas fa-minus"></i>';
+                
+                gsap.fromTo(answer, 
+                    { 
+                        maxHeight: 0,
+                        padding: '0 20px'
+                    },
+                    {
+                        maxHeight: '300px',
+                        padding: '0 20px 20px',
+                        duration: 0.4,
+                        ease: 'power2.out'
+                    }
+                );
             } else {
+                // Closing animation
+                answer.classList.remove('active');
+                toggle.classList.remove('active');
                 toggle.innerHTML = '<i class="fas fa-plus"></i>';
+                
+                gsap.to(answer, {
+                    maxHeight: 0,
+                    padding: '0 20px',
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
             }
         });
+        
+        // Add keyboard support
+        question.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                question.click();
+            }
+        });
+        
+        // Make it focusable for accessibility
+        question.setAttribute('tabindex', '0');
+        question.setAttribute('role', 'button');
+        question.setAttribute('aria-expanded', 'false');
+        
+        // Update aria-expanded when toggled
+        const observer = new MutationObserver(() => {
+            const isExpanded = answer.classList.contains('active');
+            question.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        observer.observe(answer, { attributes: true, attributeFilter: ['class'] });
     });
     
     // Form submission
@@ -530,4 +844,56 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial call to display the countdown immediately
     updateCountdown();
+    
+    // Newsletter signup functionality
+    const newsletterForm = document.querySelector('.newsletter-form');
+    const newsletterInput = document.querySelector('.newsletter-input');
+    const newsletterBtn = document.querySelector('.newsletter-btn');
+    
+    if (newsletterForm && newsletterInput && newsletterBtn) {
+        newsletterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = newsletterInput.value.trim();
+            
+            if (email && isValidEmail(email)) {
+                // Show success animation
+                newsletterBtn.innerHTML = '<i class="fas fa-check"></i>';
+                newsletterBtn.style.background = '#4CAF50';
+                newsletterInput.value = '';
+                newsletterInput.placeholder = 'Thanks for subscribing!';
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    newsletterBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                    newsletterBtn.style.background = '';
+                    newsletterInput.placeholder = 'Enter your email';
+                }, 3000);
+                
+                // You can add actual newsletter signup logic here
+                console.log('Newsletter signup for:', email);
+            } else {
+                // Show error animation
+                newsletterInput.style.borderColor = '#f44336';
+                newsletterInput.placeholder = 'Please enter a valid email';
+                
+                setTimeout(() => {
+                    newsletterInput.style.borderColor = '';
+                    newsletterInput.placeholder = 'Enter your email';
+                }, 2000);
+            }
+        });
+        
+        // Allow Enter key to submit
+        newsletterInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                newsletterBtn.click();
+            }
+        });
+    }
+    
+    // Email validation helper function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
 });
