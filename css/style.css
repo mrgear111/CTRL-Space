@@ -530,7 +530,10 @@ nav {
 
 .logo img {
     height: 40px;
+    width: auto;
+    max-width: 100%;
     margin-right: 10px;
+    display: block;
 }
 
 .nav-links {
@@ -568,16 +571,89 @@ nav {
 }
 
 .register-btn {
-    background: linear-gradient(45deg, var(--dark-bg), var(--dark-bg));
-    padding: 10px 20px;
-    border-radius: 30px;
-    margin-left: 15px;
-    box-shadow: var(--glow-shadow);
+    background: linear-gradient(135deg, #6e00ff 0%, #4a00e0 100%);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    margin-left: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    box-shadow: 0 10px 30px rgba(106, 0, 255, 0.5);
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.register-btn i {
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
 }
 
 .register-btn:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 7px 20px rgba(110, 0, 255, 0.4);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(106, 0, 255, 0.6);
+    background: linear-gradient(135deg, #7a1cff 0%, #5c13d4 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.register-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 5px 15px rgba(106, 0, 255, 0.4);
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.6s;
+}
+
+.register-btn:hover::before {
+    left: 100%;
+}
+
+/* Add a subtle pulse animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(106, 0, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(106, 0, 255, 0); }
+}
+
+.register-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Hover effect for the arrow */
+.register-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .register-btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+        margin: 15px auto;
+        width: 100%;
+        max-width: 280px;
+        display: flex;
+    }
 }
 
 .nav-toggle {
