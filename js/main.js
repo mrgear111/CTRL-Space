@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // If the countdown is finished
             if (distance < 0) {
                 clearInterval(countdownTimer);
-                document.querySelector('.countdown').innerHTML = '<div class="event-started">The event has started!</div>';
+                document.querySelector('.countdown').innerHTML = '<div class="event-started">🔴 LIVE</div>';
                 return;
             }
             
