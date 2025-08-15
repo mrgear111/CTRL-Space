@@ -3165,7 +3165,7 @@ footer::before {
     
     /* Hero - Small Mobile */
     .hero {
-        padding-top: 70px;
+        padding-top: 370px;
         min-height: 80vh;
     }
     
@@ -3230,7 +3230,8 @@ footer::before {
     .hero-image {
         width: 100%;
         max-width: 320px;
-        margin: 30px auto 0;
+        margin-left: 30px auto 0;
+        padding-bottom: 30px;
     }
     
     .stats {
