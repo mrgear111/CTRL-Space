@@ -191,16 +191,148 @@
             </div>
         </section>
 
-        <section id="challenges" class="challenges">
+        
+        <section id="challenges" class="schedule">
             <div class="container">
-                <div class="section-header">
-                    <h2>Hackathon Challenges</h2>
-                    <div class="underline"></div>
+                <div class="schedule-header">
+                    <div class="schedule-title">
+                        <h2>Problem Statement</h2>
+                        <div class="underline"></div>
+                        <div class="pdf-download-section">
+                            <a href="images/CTRL+SPACE PROBLEM STATEMENTS.pdf" download="CTRL+SPACE_Problem_Statements.pdf" class="pdf-download-btn">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Download Problem Statements PDF</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="schedule-rocket">
+                        
+                    </div>
                 </div>
-                <div class="challenges-grid">
-                    <div class="challenge-card" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
-                        <h3 style="font-size: 2rem; margin-bottom: 20px;">Coming soon...</h3>
-                        <p style="font-size: 1.2rem; color: var(--light-text);">We're working on some exciting challenges for you. Stay tuned!</p>
+                    <!-- Problem Statement 1 -->
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">01</div>
+                            <div class="problem-badge">AI & Navigation</div>
+                        </div>
+                        <h3>ODIN - Optimal Dynamic Interplanetary Navigator</h3>
+                        <div class="problem-description">
+                            <p>Design an agentic AI system capable of autonomously planning and dynamically replanning spacecraft trajectories for Earth-to-Moon missions with real-time hazard detection and avoidance.</p>
+                            
+                            <div class="problem-details">
+                                <h4>Key Requirements:</h4>
+                                <ul>
+                                    <li>Initialize with historical timestamps (2012-2018) for real space weather data</li>
+                                    <li>Continuously monitor solar activity, space weather, and orbital debris</li>
+                                    <li>Use Generative AI for real-time trajectory replanning when threats are detected</li>
+                                    <li>Generate human-readable decision logs with clear trade-off explanations</li>
+                                    <li>Evaluate options based on fuel efficiency (Δv cost), time, and crew safety</li>
+                                </ul>
+                                
+                                <h4>Expected Deliverables:</h4>
+                                <ul>
+                                    <li>System architecture and workflow diagrams</li>
+                                    <li>Trajectory visualization and simulation dashboards</li>
+                                    <li>Mock-ups of decision logs and mission control interfaces</li>
+                                    <li>Demonstration of resilience under dynamic space conditions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Space Weather</span>
+                            <span class="tag">Trajectory Planning</span>
+                            <span class="tag">Real-time Systems</span>
+                            <span class="tag">Decision Making</span>
+                        </div>
+                    </div>
+
+                    <!-- Problem Statement 2 -->
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">02</div>
+                            <div class="problem-badge">Mission Design</div>
+                        </div>
+                        <h3>Intercepting 3I/ATLAS Interstellar Object</h3>
+                        <div class="problem-description">
+                            <p>Design and simulate a comprehensive space mission to intercept the mysterious interstellar object 3I/ATLAS (C/2019 Y4) before it exits our solar system forever.</p>
+                            
+                            <div class="problem-details">
+                                <h4>Mission Components:</h4>
+                                <ul>
+                                    <li><strong>Track the Object:</strong> Build a platform to visualize real-time 3I/ATLAS trajectory</li>
+                                    <li><strong>Design the Mission:</strong> Interactive "click to chase" mission planning interface</li>
+                                    <li><strong>Interactive Experience:</strong> Engaging 3D visualizations and gamified interface</li>
+                                </ul>
+                                
+                                <h4>Technical Considerations:</h4>
+                                <ul>
+                                    <li>Launch window optimization and precise timing analysis</li>
+                                    <li>Spacecraft propulsion system selection (chemical, electric, nuclear, solar sail)</li>
+                                    <li>Travel time vs fuel efficiency trade-offs and mission constraints</li>
+                                    <li>Scientific payload design for comprehensive object study</li>
+                                    <li>Educational value and public engagement aspects</li>
+                                </ul>
+                                
+                                <h4>Submission Phases:</h4>
+                                <ul>
+                                    <li><strong>Phase 1:</strong> PPT presentation with mission concept and approach</li>
+                                    <li><strong>Phase 2:</strong> Working prototype with GitHub repository and deployed demo</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Orbital Mechanics</span>
+                            <span class="tag">3D Visualization</span>
+                            <span class="tag">Mission Planning</span>
+                            <span class="tag">Interactive Design</span>
+                            <span class="tag">Gamification</span>
+                        </div>
+                    </div>
+
+                    <!-- Problem Statement 3 -->
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">03</div>
+                            <div class="problem-badge">Data Science</div>
+                        </div>
+                        <h3>Multi-Messenger Event Correlator</h3>
+                        <div class="problem-description">
+                            <p>Build an advanced system to fetch astrophysical event data from multiple sources and identify potentially related cosmic events through sophisticated spatial and temporal correlation analysis.</p>
+                            
+                            <div class="problem-details">
+                                <h4>Data Sources Integration:</h4>
+                                <ul>
+                                    <li><strong>Gravitational Waves:</strong> GWOSC (Gravitational Wave Open Science Center)</li>
+                                    <li><strong>Optical Transients:</strong> ZTF (Zwicky Transient Facility) or TNS (Transient Name Server)</li>
+                                    <li><strong>High-Energy Events:</strong> NASA HEASARC (gamma-ray bursts, X-ray transients)</li>
+                                    <li><strong>Stellar Catalogs:</strong> SIMBAD or VizieR for celestial object context and metadata</li>
+                                </ul>
+                                
+                                <h4>Correlation Analysis Methods:</h4>
+                                <ul>
+                                    <li><strong>Temporal Correlation:</strong> Events within defined time windows (±10 minutes to ±1 day)</li>
+                                    <li><strong>Spatial Correlation:</strong> Sky coordinate matching (RA/Dec) within angular distances</li>
+                                    <li><strong>Cross-Messenger Detection:</strong> Multi-source event flagging with confidence scoring</li>
+                                    <li><strong>Event Classification:</strong> Identification of neutron star mergers, supernovae, and other phenomena</li>
+                                </ul>
+                                
+                                <h4>Expected Output:</h4>
+                                <ul>
+                                    <li>Correlated event clusters with space-time coordinate matching</li>
+                                    <li>Comprehensive metadata for each detected event (source, time, RA/Dec, type)</li>
+                                    <li>Confidence scoring system for correlation reliability</li>
+                                    <li>Visualization dashboard for multi-messenger analysis results</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Big Data</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Astrophysics</span>
+                            <span class="tag">Event Correlation</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,7 +367,7 @@
                         <div class="timeline-date">Phase 1 - PPT Submission</div>
                         <div class="timeline-content">
                             <h3>PPT Submission Round</h3>
-                            <p>August 25 - September 2, 2025</p>
+                            <p>August 25 - August 27, 2025</p>
                             <p>Submit your project proposal and presentation for initial evaluation.</p>
                         </div>
                     </div>
