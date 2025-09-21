@@ -442,7 +442,7 @@ img {
 }
 
 /* Number badge */
-.results-list li::before {
+.results-list ol::before {
     counter-increment: team;
     content: counter(team);
     position: absolute;
